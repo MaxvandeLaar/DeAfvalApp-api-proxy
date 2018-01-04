@@ -1,0 +1,14 @@
+{
+  "name": "DeAfvalApp-api-proxy",
+  "version": "1.0.0",
+  "description": "Proxy for 'De Afvalapp' api as this returns results in a horrible format",
+  "main": "deAfvalApp-api-proxy.js",
+  "author": "Max van de Laar",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "http-status-codes": "^1.3.0",
+    "promise": "^8.0.1",
+    "request": "^2.83.0"
+  }
+}
