@@ -36,7 +36,7 @@ function getCountryByZipcode(zipcode) {
 
 function formatAddress(body, zipcode, houseNumber, houseNumberAddition = '') {
     let data = body.split(';');
-    if (parseInt(data[0]) && parseInt(data[0]) === 0) {
+    if (data[0] === '0') {
         return {
             success: true,
             street: data[4],
