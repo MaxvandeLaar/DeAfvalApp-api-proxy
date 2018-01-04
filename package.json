@@ -6,9 +6,17 @@
   "author": "Max van de Laar",
   "license": "MIT",
   "private": false,
+  "scripts": {
+    "test": "./node_modules/mocha/bin/mocha --exit"
+  },
   "dependencies": {
     "http-status-codes": "^1.3.0",
     "promise": "^8.0.1",
     "request": "^2.83.0"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "chai-http": "^3.0.0",
+    "mocha": "^4.0.1"
   }
 }
