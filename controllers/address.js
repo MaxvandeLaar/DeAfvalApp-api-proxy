@@ -39,7 +39,7 @@ function formatAddress(body, zipcode, houseNumber, houseNumberAddition = '') {
     if (data[0] === '0') {
         return {
             success: true,
-            street: data[4],
+            street: data[4] === '-'?'':data[4],
             houseNumber: houseNumber,
             houseNumberAddition: houseNumberAddition,
             zipcode: zipcode,
