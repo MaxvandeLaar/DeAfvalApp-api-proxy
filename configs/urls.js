@@ -13,6 +13,9 @@ let Urls = function () {
                 check: `${baseUrl}?${service}=CHECK_ADRES`
             }
         },
+        announcements: {
+            all: `${baseUrl}?${service}=MEDEDELINGEN`
+        },
         schedule: `${baseUrl}?${service}=OPHAALSCHEMA`
     };
 };
