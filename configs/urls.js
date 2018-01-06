@@ -4,8 +4,14 @@ let Urls = function () {
     let service = 'service';
 
     return {
-        address: {
-            check: `${baseUrl}?${service}=CHECK_ADRES`
+        locations: {
+            municipalities: {
+                all: `${baseUrl}?${service}=GEMEENTEN`,
+                info: `${baseUrl}?${service}=GEMEENTEINFO`
+            },
+            address:{
+                check: `${baseUrl}?${service}=CHECK_ADRES`
+            }
         },
         schedule: `${baseUrl}?${service}=OPHAALSCHEMA`
     };

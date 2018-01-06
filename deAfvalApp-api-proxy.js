@@ -3,11 +3,11 @@
 global.__base = __dirname;
 
 let path = require('path');
-let Address = require(path.resolve(__dirname, 'controllers/address'));
+let Locations = require(path.resolve(__dirname, 'controllers/locations'));
 
 let Proxy = function(){
 
-    Proxy.prototype.address = Address;
+    Proxy.prototype.locations = Locations;
 };
 
 module.exports = Proxy;
