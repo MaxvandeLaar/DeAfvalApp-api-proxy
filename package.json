@@ -1,6 +1,6 @@
 {
     "name": "deafvalapp-api-proxy",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "description": "Proxy for 'De Afvalapp' api as this returns results in a horrible format",
     "main": "deAfvalApp-api-proxy.js",
     "author": "Max van de Laar",
