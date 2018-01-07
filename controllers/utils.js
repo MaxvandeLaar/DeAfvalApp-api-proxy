@@ -33,13 +33,9 @@ function wrapCDATA(body, node){
     return body.replace(`<${node}>`, `<${node}><![CDATA[`).replace(`</${node}>`, `]]></${node}>`);
 }
 
-let utils = {
+module.exports = {
     rejectHandler: rejectHandler,
     urlParams: urlParams,
     getCountryByZipcode: getCountryByZipcode,
     wrapCDATA: wrapCDATA
 };
-
-
-
-module.exports = utils;

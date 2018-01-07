@@ -3,7 +3,7 @@ const Utils = require(path.resolve(global.__base, 'controllers/utils'));
 const xml2js = require('xml2js');
 
 function municipalityInfo(body){
-    let xmlParser = new xml2js.Parser({
+    const xmlParser = new xml2js.Parser({
         explicitArray: false,
         explicitRoot: false,
         normalize: true,

@@ -1,7 +1,7 @@
 let Urls = function () {
     //type=ANDROID || type=IOS
-    let baseUrl = `http://dataservice.deafvalapp.nl/dataservice/DataServiceServlet`;
-    let service = 'service';
+    const baseUrl = `http://dataservice.deafvalapp.nl/dataservice/DataServiceServlet`;
+    const service = 'service';
 
     return {
         locations: {
@@ -16,7 +16,9 @@ let Urls = function () {
         announcements: {
             all: `${baseUrl}?${service}=MEDEDELINGEN`
         },
-        schedule: `${baseUrl}?${service}=OPHAALSCHEMA`
+        garbage: {
+            schedule: `${baseUrl}?${service}=OPHAALSCHEMA`
+        }
     };
 };
 

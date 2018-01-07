@@ -9,7 +9,7 @@ const expect = chai.expect;
 chai.use(chaiHttp);
 
 describe('Announcements', function () {
-    let Proxy = new App();
+    const Proxy = new App();
     describe('#getAnnouncements()', function(){
         it('it should return a list of all announcements for a specific address', async function(){
             const announcements = await Proxy.announcements.getAnnouncements('6118AS', 14);

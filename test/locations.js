@@ -9,7 +9,7 @@ const expect = chai.expect;
 chai.use(chaiHttp);
 
 describe('Locations', function () {
-    let Proxy = new App();
+    const Proxy = new App();
     describe('#getAddress()', function () {
         const addresses = [
             {zipCode: '6118AS', houseNumber: 14, houseNumberAddition: '', expected: true},

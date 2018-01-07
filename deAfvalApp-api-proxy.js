@@ -2,12 +2,11 @@
 // example: let instanceConf = require(`${__base}/configs/instance`);
 global.__base = __dirname;
 
-let path = require('path');
-let Locations = require(path.resolve(__dirname, 'controllers/locations'));
-let Announcements = require(path.resolve(__dirname, 'controllers/announcements'));
+const path = require('path');
+const Locations = require(path.resolve(__dirname, 'controllers/locations'));
+const Announcements = require(path.resolve(__dirname, 'controllers/announcements'));
 
-let Proxy = function(){
-
+const Proxy = function(){
     Proxy.prototype.locations = Locations;
     Proxy.prototype.announcements = Announcements;
 };
