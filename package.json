@@ -6,9 +6,9 @@
   "author": "Max van de Laar",
   "license": "MIT",
   "private": false,
+  "repository": "https://github.com/MaxvandeLaar/DeAfvalApp-api-proxy",
   "scripts": {
     "test": "./node_modules/mocha/bin/mocha --exit",
-    "createMD": "node createMD.js",
     "docs": "jsdoc2md --template doc_src/README.hbs --configure doc_src/jsdoc2mdConfig.json deAfvalApp-api-proxy.js controllers/*.js > README.md"
   },
   "dependencies": {
