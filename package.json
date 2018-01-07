@@ -1,30 +1,30 @@
 {
-  "name": "DeAfvalApp-api-proxy",
-  "version": "1.0.0",
-  "description": "Proxy for 'De Afvalapp' api as this returns results in a horrible format",
-  "main": "deAfvalApp-api-proxy.js",
-  "author": "Max van de Laar",
-  "license": "MIT",
-  "private": false,
-  "repository": "https://github.com/MaxvandeLaar/DeAfvalApp-api-proxy",
-  "scripts": {
-    "test": "./node_modules/mocha/bin/mocha --exit",
-    "docs": "jsdoc2md --template doc_src/README.hbs --configure doc_src/jsdoc2mdConfig.json deAfvalApp-api-proxy.js controllers/*.js > README.md"
-  },
-  "dependencies": {
-    "http-status-codes": "^1.3.0",
-    "promise": "^8.0.1",
-    "request": "^2.83.0",
-    "xml2js": "^0.4.19"
-  },
-  "devDependencies": {
-    "babel-core": "^6.26.0",
-    "babel-plugin-transform-async-to-generator": "^6.24.1",
-    "babel-preset-es2015": "^6.24.1",
-    "chai": "^4.1.2",
-    "chai-http": "^3.0.0",
-    "jsdoc-babel": "^0.3.0",
-    "jsdoc-to-markdown": "^3.0.3",
-    "mocha": "^4.0.1"
-  }
+    "name": "DeAfvalApp-api-proxy",
+    "version": "1.0.0",
+    "description": "Proxy for 'De Afvalapp' api as this returns results in a horrible format",
+    "main": "deAfvalApp-api-proxy.js",
+    "author": "Max van de Laar",
+    "license": "MIT",
+    "private": false,
+    "repository": "https://github.com/MaxvandeLaar/DeAfvalApp-api-proxy",
+    "scripts": {
+        "test": "./node_modules/mocha/bin/mocha --exit",
+        "docs": "jsdoc2md --template doc_src/README.hbs --configure doc_src/jsdoc2mdConfig.json deAfvalApp-api-proxy.js controllers/*.js > README.md"
+    },
+    "dependencies": {
+        "http-status-codes": "^1.3.0",
+        "promise": "^8.0.1",
+        "request": "^2.83.0",
+        "xml2js": "^0.4.19"
+    },
+    "devDependencies": {
+        "babel-core": "^6.26.0",
+        "babel-plugin-transform-async-to-generator": "^6.24.1",
+        "babel-preset-es2015": "^6.24.1",
+        "chai": "^4.1.2",
+        "chai-http": "^3.0.0",
+        "jsdoc-babel": "^0.3.0",
+        "jsdoc-to-markdown": "^3.0.3",
+        "mocha": "^4.0.1"
+    }
 }
