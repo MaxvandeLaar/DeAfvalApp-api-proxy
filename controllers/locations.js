@@ -1,12 +1,12 @@
 const path = require('path');
 const request = require('request');
-const urls = require(path.resolve(global.__base, 'configs/urls'))();
+const Urls = require(path.resolve(global.__base, 'configs/urls'));
 const Utils = require(path.resolve(global.__base, 'controllers/utils'));
 const Format = require(path.resolve(global.__base, 'controllers/formatter'));
 
 function getAddress(zipCode, houseNumber, houseNumberAddition = '') {
     zipCode = zipCode.formatZipCode();
-    const url = `${urls.locations.address.check}${Utils.urlParams(zipCode, houseNumber, houseNumberAddition)}`;
+    const url = `${Urls.locations.address.check}${Utils.urlParams(zipCode, houseNumber, houseNumberAddition)}`;
 
     return new Promise((fulfill, reject) => {
         request.get(url, (error, response, body) => {
@@ -18,7 +18,7 @@ function getAddress(zipCode, houseNumber, houseNumberAddition = '') {
 }
 
 function getAllMunicipalities(){
-    const url = urls.locations.municipalities.all;
+    const url = Urls.locations.municipalities.all;
 
     return new Promise((fulfill, reject) => {
         request.get(url, (error, response, body) => {
@@ -32,7 +32,7 @@ function getAllMunicipalities(){
 function getMunicipalityInfo(zipCode, houseNumber, houseNumberAddition = ''){
     zipCode = zipCode.formatZipCode();
 
-    const url = `${urls.locations.municipalities.info}${Utils.urlParams(zipCode, houseNumber, houseNumberAddition)}`;
+    const url = `${Urls.locations.municipalities.info}${Utils.urlParams(zipCode, houseNumber, houseNumberAddition)}`;
     console.log(url);
     return new Promise((fulfill, reject) => {
         request.get(url, async (error, response, body) => {
