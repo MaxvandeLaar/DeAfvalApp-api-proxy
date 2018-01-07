@@ -5,10 +5,12 @@ global.__base = __dirname;
 const path = require('path');
 const Locations = require(path.resolve(__dirname, 'controllers/locations'));
 const Announcements = require(path.resolve(__dirname, 'controllers/announcements'));
+const Garbage = require(path.resolve(__dirname, 'controllers/garbage'));
 
 const Proxy = function(){
     Proxy.prototype.locations = Locations;
     Proxy.prototype.announcements = Announcements;
+    Proxy.prototype.garbage = Garbage;
 };
 
 module.exports = Proxy;
