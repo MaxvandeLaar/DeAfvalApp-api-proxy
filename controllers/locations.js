@@ -33,7 +33,6 @@ function getMunicipalityInfo(zipCode, houseNumber, houseNumberAddition = ''){
     zipCode = zipCode.formatZipCode();
 
     const url = `${Urls.locations.municipalities.info}${Utils.urlParams(zipCode, houseNumber, houseNumberAddition)}`;
-    console.log(url);
     return new Promise((fulfill, reject) => {
         request.get(url, async (error, response, body) => {
             Utils.rejectHandler(reject, error, response);

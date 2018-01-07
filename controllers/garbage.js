@@ -16,6 +16,21 @@ function getSchedule(zipCode, houseNumber, houseNumberAddition = '') {
     });
 }
 
+function getGarbageInfo(zipCode, houseNumber, houseNumberAddition = ''){
+    zipCode = zipCode.formatZipCode();
+
+    const url = `${Urls.garbage.info}${Utils.urlParams(zipCode, houseNumber, houseNumberAddition)}`;
+    return new Promise((fulfill, reject) => {
+        request.get(url, async (error, response, body) => {
+            Utils.rejectHandler(reject, error, response);
+
+            const info = await Format.garbage.garbageInfo(body);
+            fulfill(info);
+        });
+    });
+}
+
 module.exports = {
-    getSchedule: getSchedule
+    getSchedule: getSchedule,
+    getGarbageInfo: getGarbageInfo
 };

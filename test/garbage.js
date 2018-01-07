@@ -17,4 +17,12 @@ describe('Garbage', function () {
             schedule.should.have.lengthOf.at.least(1);
         });
     });
+
+    describe('#getGarbageInfo()', function(){
+        it('it should return information on how to garbage collection', async function(){
+            const garbageInfo = await Proxy.garbage.getGarbageInfo('6118AS', 14);
+            garbageInfo.should.be.a('object');
+            garbageInfo.should.have.property('success').equal(true);
+        });
+    });
 });

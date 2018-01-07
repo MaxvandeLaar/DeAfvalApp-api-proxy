@@ -1,3 +1,7 @@
+const path = require('path');
+const Utils = require(path.resolve(global.__base, 'controllers/utils'));
+const xml2js = require('xml2js');
+
 function schedule(body){
     let data = body.split('\n');
     if (!data[data.length-1]){
@@ -17,6 +21,36 @@ function schedule(body){
     return result;
 }
 
+function garbageInfo(body){
+    const xmlParser = new xml2js.Parser({
+        explicitArray: false,
+        explicitRoot: false,
+        normalize: true,
+        trim:true,
+        normalizeTags:true,
+    });
+
+    body = Utils.wrapCDATA(body, 'stroom');
+    body = Utils.wrapCDATA(body, 'naam');
+    body = Utils.wrapCDATA(body, 'naamkort');
+    body = Utils.wrapCDATA(body, 'info');
+    body = Utils.wrapCDATA(body, 'wel');
+    body = Utils.wrapCDATA(body, 'niet');
+    body = Utils.wrapCDATA(body, 'calicon');
+    body = Utils.wrapCDATA(body, 'mapicon');
+
+    return new Promise((fulfill, reject) => {
+        xmlParser.parseString(body, function (err, result) {
+            if (err)
+                reject(err);
+
+            result.success = true;
+            fulfill(result);
+        });
+    });
+}
+
 module.exports = {
-    schedule:schedule
+    schedule:schedule,
+    garbageInfo: garbageInfo
 };
