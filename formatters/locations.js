@@ -61,7 +61,7 @@ function municipalities(body){
     let result = [];
     data.forEach((value) => {
         let tmp = value.split(';');
-        result.push({country: tmp[0], city:tmp[1]});
+        result.push({country: tmp[0], municipality:tmp[1]});
     });
     return result;
 }
