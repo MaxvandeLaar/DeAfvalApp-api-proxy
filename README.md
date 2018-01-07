@@ -1,6 +1,33 @@
 # DeAfvalApp-api-proxy
 Due to the horrible format of 'De Afval App' api, I have decided to write a proxy for it.
 
+<dl>
+    <dt><a href="#install">Install</a></dt>
+    <dd></dd>
+    <dt><a href="#usage">Usage</a></dt>
+    <dd></dd>
+    <dt><a href="#documantation">Documentation</a></dt>
+    <dd></dd>
+</dl>
+
+<a name="install"></a>
+## Install
+`npm install DeAfvalApp-api-proxy`
+
+`yarn add DeAfvalApp-api-proxy`
+
+<a name="usage"></a>
+## Usage
+
+```javascript 1.8
+const proxy = require('DeAfvalApp-api-proxy')();
+
+async function doSomethingWithAddress(){
+    const address = await proxy.locations.getAddress('1234AB', 1);
+    console.log(address);
+}
+```
+<a name="documentation"></a>
 ## Modules
 
 <dl>
