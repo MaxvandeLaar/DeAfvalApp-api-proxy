@@ -20,7 +20,8 @@ Due to the horrible format of 'De Afval App' api, I have decided to write a prox
 ## Usage
 
 ```javascript 1.8
-const proxy = require('DeAfvalApp-api-proxy')();
+const Proxy = require('DeAfvalApp-api-proxy');
+const proxy = new Proxy();
 
 async function doSomethingWithAddress(){
     const address = await proxy.locations.getAddress('1234AB', 1);
