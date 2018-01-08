@@ -45,6 +45,17 @@ function garbageInfo(body){
                 reject(err);
 
             result.success = true;
+            result.garbageInfo = Utils.delKey(result, "afvalinfo");
+
+            result.garbageInfo.forEach((val, i) => {
+                val.garbageTypes = Utils.delKey(val, "afvalstromen");
+                val.garbageTypes.type = Utils.delKey(val.garbageTypes, "stroom");
+                val.name = Utils.delKey(val, "naam");
+                val.shortName = Utils.delKey(val, "naamkort");
+                val.howTo = Utils.delKey(val, "wel");
+                val.howNotTo = Utils.delKey(val, "niet");
+            });
+
             fulfill(result);
         });
     });

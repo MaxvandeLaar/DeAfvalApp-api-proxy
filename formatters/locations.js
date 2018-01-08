@@ -21,12 +21,20 @@ function municipalityInfo(body){
     body = Utils.wrapCDATA(body, 'banner');
     body = Utils.wrapCDATA(body, 'logo');
 
+
+
     return new Promise((fulfill, reject) => {
         xmlParser.parseString(body, function (err, result) {
             if (err)
                 reject(err);
 
             result.success = true;
+            result.municipality = Utils.delKey(result, "gemeente");
+            result.municipality.name = Utils.delKey(result.municipality, "naam");
+            result.municipality.header = Utils.delKey(result.municipality, "kop");
+            result.municipality.addresses = Utils.delKey(result.municipality, "adressen");
+            result.municipality.otherInfo = Utils.delKey(result.municipality, "overig");
+
             fulfill(result);
         });
     });

@@ -33,9 +33,16 @@ function wrapCDATA(body, node){
     return body.replace(`<${node}>`, `<${node}><![CDATA[`).replace(`</${node}>`, `]]></${node}>`);
 }
 
+function delKey(obj, key){
+    let val = obj[key];
+    delete obj[key];
+    return val;
+}
+
 module.exports = {
     rejectHandler: rejectHandler,
     urlParams: urlParams,
     getCountryByZipcode: getCountryByZipcode,
-    wrapCDATA: wrapCDATA
+    wrapCDATA: wrapCDATA,
+    delKey: delKey
 };
