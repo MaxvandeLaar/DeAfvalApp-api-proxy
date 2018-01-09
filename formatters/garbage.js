@@ -1,6 +1,7 @@
 const path = require('path');
 const Utils = require(path.resolve(global.__base, 'controllers/utils'));
 const xml2js = require('xml2js');
+const moment = require('moment');
 
 function schedule(body){
     let data = body.split('\n');
@@ -16,6 +17,9 @@ function schedule(body){
             tmp.pop();
         }
         tmp.reverse();
+        tmp.forEach((date, i) => {
+            tmp[i] = moment(date, 'DD-MM-YYYY').format('YYYY-MM-DD');
+        });
         result.push({type: type, dates: tmp});
     });
     return result;
@@ -47,7 +51,7 @@ function garbageInfo(body){
             result.success = true;
             result.garbageInfo = Utils.delKey(result, "afvalinfo");
 
-            result.garbageInfo.forEach((val, i) => {
+            result.garbageInfo.forEach((val) => {
                 val.garbageTypes = Utils.delKey(val, "afvalstromen");
                 val.garbageTypes.type = Utils.delKey(val.garbageTypes, "stroom");
                 val.name = Utils.delKey(val, "naam");
