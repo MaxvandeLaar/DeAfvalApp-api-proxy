@@ -57,7 +57,7 @@ function address(body, zipCode, houseNumber, houseNumberAddition = '') {
     }
     return {
         success:false,
-        error: body
+        error: data[1]
     };
 }
 
